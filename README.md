@@ -3,7 +3,7 @@ Reusing pre-collected data from different domains is an attractive solution in d
 
 ## Citation
 ```
-@artical{
+@article{
     niu2024xted,
     title={xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing},
     author={Niu, Haoyi and Chen, Qimao and Liu, Tenglong and Li, Jianxiong and Zhou, Guyue and Zhang, Yi and Hu, Jianming and Zhan, Xianyuan},
