@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>xTED</title>
+  
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Cross-Domain Policy Adaptation via
+Diffusion-Based Trajectory Editing">
+    <meta name="keywords" content="DecisionNCE, Representation Learning, Embodied AI, AI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cross-Domain Policy Adaptation via
+        Diffusion-Based Trajectory Editing</title>
+    <title>Cross-Domain Policy Adaptation via
+        Diffusion-Based Trajectory Editing</title>
+    <!-- <link rel="icon" href="./assets/icon.png"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <script defer src="./assets/js/fontawesome.all.min.js"></script>
+    
+</head>
+
+<body>
+  
+
+      
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+          
+        <div class="columns is-centered">
+          
+            <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+                <!-- <img src="./assets/icon.png" style="width:1em;vertical-align: middle" alt="Logo"/>  -->
+                <span class="mmmu" style="vertical-align: middle">xTED</span>
+                </h1>
+            <h2 class="subtitle is-3 publication-subtitle">
+                Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing
+                
+                <!-- <br>
+                and Reasoning Benchmark for Expert AGI -->
+            </h2>
+
+            <!-- <div class="is-size-5 publication-authors">
+                <span class="author-block">XXX* <sup>†</sup> <sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX* <sup style="color:#DC4437;">1</sup> <sup style="color:#4385F5;">2</sup>,</span>
+                <span class="author-block">XXX* <sup style="color:#DC4437;">1</sup>,</span><br>
+                <span class="author-block">XXX<sup style="color:#109D59;">3</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#F5B400;">4</sup> <sup style="color:#4385F5;">2</sup>,</span><br>
+                <span class="author-block">XXX<sup style="color:#4385F5;">2</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block">XXX<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#f542dd;">5</sup>,</span>
+                
+            </div>
+            
+            <br>
+            
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup style="color:#DC4437;">1</sup>XXX</span>
+                <span class="author-block"><sup style="color:#4385F5;">2</sup>XXX</span>
+                <span class="author-block"><sup style="color:#109D59;">3</sup>XXX</span><br>
+                <span class="author-block"><sup style="color:#F5B400;">4</sup>XXX</span>
+                <span class="author-block"><sup style="color:#f542dd;">5</sup>XXX</span>
+            </div>
+    
+            <br> -->
+
+            <!-- <div class="is-size-5 publication-authors">
+                <span class="author-block">*Equal contribution, </span><br>
+                <span class="author-block">†Project Lead:</span>
+                <span class="author-block"><a href="mailto:li-jx21@mails.tsinghua.edu.cn">li-jx21@mails.tsinghua.edu.cn</a></span><br>
+                <span class="author-block">✉Corresponding author:</span>
+                <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
+            </div> -->
+            
+           
+            <!-- <style>
+              .accepted {
+                text-align: center;
+                color: #0a283d; /* Dark blue color */
+                font-size: 24px;
+                background-color: #e8f0fe79; /* Light blue background */
+                border: 1px solid #B6D4FE;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            </style>
+            <div class="accepted">
+              <i class="fas fa-fire icon" style="color: red;"></i>
+              Exciting News! Our paper has been accepted at ICML2024 and selected as outstanding paper at MFM-EAI workshop@ICML2024!
+            </div> -->
+    
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                <!-- Arxiv PDF Link. -->
+                <span class="link-block">
+                  <a href=""
+                      class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Arxiv</span>
+                  </a>
+              </span>
+                <!-- <span class="link-block">
+                    <a href="https://openreview.net/forum?id=j5JvZCaDM0"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Openreview</span>
+                    </a>
+                </span> -->
+                <!-- <span class="link-block">
+                    <a href="https://cloud.tsinghua.edu.cn/d/0d2939f7f7234cf68f1d/"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <p style="font-size:18px">🔗</p>
+                    </span>
+                    <span>Dataset</span>
+                    </a>
+                </span> -->
+                <span class="link-block">
+                    <a href="https://github.com/xTED24/xTED"
+                        class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+
+                </div>
+    
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+</style>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="matting-video" autoplay muted controls playsinline width="100%" >
+        <source src="./assets/web/teaser.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+    <div class="container" style="margin-bottom: 2vh;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h1 class="title is-2">Abstract</h1>
+          
+          <div class="content has-text-justified">
+            <p>
+                Reusing pre-collected data from different domains is an attractive solution in
+                decision-making tasks where the accessible data is insufficient in the target domain
+                but relatively abundant in other related domains. Existing cross-domain policy
+                transfer methods mostly aim at learning domain correspondences or corrections
+                to facilitate policy learning, which requires learning domain/task-specific model
+                components, representations, or policies that are inflexible or not fully reusable to
+                accommodate arbitrary domains and tasks. These issues make us wonder: can we
+                directly bridge the domain gap at the data (trajectory) level, instead of devising
+                complicated, domain-specific policy transfer models? In this study, we propose
+                a Cross-Domain Trajectory EDiting (xTED) framework with a new transformer-
+                based diffusion model (Decision Diffusion Transformer, DDiT) that captures
+                the trajectory distribution from the target dataset as a prior. The proposed
+                diffusion transformer backbone captures the intricate dependencies among state,
+                action, and reward sequences, as well as the transition dynamics within the target
+                data trajectories. With the above pre-trained diffusion prior, source data trajectories
+                with domain gaps can be transformed into edited trajectories that closely resemble
+                the target data distribution through the diffusion-based editing process, which
+                implicitly corrects the underlying domain gaps, enhancing the state realism and
+                dynamics reliability in source trajectory data, while enabling flexible choices of
+                downstream policy learning methods. Despite its simplicity, DDiT demonstrates
+                superior performance against other baselines in extensive simulation and real-robot experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-full-width has-text-centered"> -->
+        <div class="column is-four-fifths">
+            <h1 class="title is-2">Downstream Robot Manipulation Tasks</h1>
+          <div class="content has-text-justified">
+          <p>
+            We conduct real-world experiments in robotic environments where target data is collected by (a) WidowX 
+            robot and source data is collected by (b) Airbot, for 100 trajectories respectively. We build three 
+            manipulation tasks: (1) Picking up a red cup on a silver pan (Cup); (2) Picking up a duck on a green plate (Duck); 
+            (3) Moving a pot from right to left (Pot). 
+          </p>
+
+
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/air.png" alt="WidowX" style="max-width: 100%;">
+                    <p><i>(a) WidowX</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/air_pickredcup.jpg" alt="Primary View" style="max-width: 100%;">
+                    <p><i>(b) Primary View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/air_pickredcup1.jpg" alt="Gripper View" style="max-width: 100%;">
+                    <p><i>(c) Gripper View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/air_duck.jpg" alt="Primary View" style="max-width: 100%;">
+                    <p><i>(d) Primary View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/air_duck1.jpg" alt="Gripper View" style="max-width: 100%;">
+                    <p><i>(e) Gripper View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/airbot.png" alt="Airbot" style="max-width: 100%;">
+                    <p><i>(f) Airbot</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/pick_redcup.jpg" alt="Primary View" style="max-width: 100%;">
+                    <p><i>(g) Primary View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/pick_redcup1.jpg" alt="Gripper View" style="max-width: 100%;">
+                    <p><i>(h) Gripper View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/pick_duck.jpg" alt="Primary View" style="max-width: 100%;">
+                    <p><i>(i) Primary View</i></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="./assets/web/robot/pick_duck_1.jpg" alt="Gripper View" style="max-width: 100%;">
+                    <p><i>(j) Gripper View</i></p>
+                </div>
+            </div>
+            <p style="text-align:center;">
+                <b>Figure 1:</b> The comparisons between the target domain and the source domain. 
+                Figure (b-e) and (g-j) show the process of data collection in target and source domain respectively. For example, Figure (b,c,g,h) and (d,e,i,j) show the primary views and gripper views from <b>Cup</b> and <b>Duck</b> tasks respectively.
+            </p>
+        
+        <div class="column">
+            <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
+            <div class="content has-text-justified">
+          
+          <!-- <div class="content has-text-centered">
+            <img src="./assets/web/redcup.png" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 1:</i></b>  robot exprimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
+          </div> -->
+<!--           <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="margin: 0 5px;">
+              <img src="./assets/web/redcup.png" alt="Red cup on silver pan" style="max-width: 100%;">
+            </div>
+            <div style="margin: 0 5px;">
+              <img src="./assets/web/duck.png" alt="Duck on green plate" style="max-width: 100%;">
+            </div>
+            <div style="margin: 0 5px;">
+              <img src="./assets/web/move.png" alt="Move pot" style="max-width: 100%;">
+            </div>
+          </div>
+          <p style="text-align: center;"><b><i>Figure:</i></b> Real robot experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p> -->
+          <div style="text-align: center;">
+            <div style="margin-bottom: 20px;">
+              <img src="./assets/web/redcup.png" alt="Red cup on silver pan" style="width: 100%; max-width: 600px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+              <img src="./assets/web/duck.png" alt="Duck on green plate" style="width: 100%; max-width: 600px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+              <img src="./assets/web/move.png" alt="Move pot" style="width: 100%; max-width: 600px;">
+            </div>
+            <p style="text-align: center;"><b><i>Figure:</i></b> Real robot experimental results. Success rate is averaged over 10 episodes and 3 seeds.</p>
+          </div>
+
+
+          <div class="column">
+            <h2 style="text-align:left" class="title is-3">Target + Edited Source (xTED)</h2>
+            <div class="content has-text-justified">
+
+          <div class="column">
+            <h3 style="text-align:left" class="title is-4">Red cup on silver pan</h3>
+            <div class="content has-text-justified">
+            </div>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupsilverpan/redcupsilverpan1.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupsilverpan/redcupsilverpan2.mp4"
+                        type="video/mp4">
+              </video>
+              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                <source src="./assets/web/redcupsilverpan/redcupsilverpan3.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column">
+                <h3 style="text-align:left" class="title is-4">Red cup on silver pan with distraction</h3>
+                <div class="content has-text-justified">
+                </div>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/redcupsilverpan/redcupsilverpan9-d.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/redcupsilverpan/redcupsilverpan6-d.mp4"
+                            type="video/mp4">
+                  </video>
+                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                    <source src="./assets/web/redcupsilverpan/redcupsilverpan3-d.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+
+                  <div class="column">
+                    <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
+                    <div class="content has-text-justified">
+                    </div>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate4.mp4"
+                                type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate5.mp4"
+                                type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate6.mp4"
+                                type="video/mp4">
+                      </video>
+                    </div>
+
+                    <h3 style="text-align:left" class="title is-4">Duck on green plate with distraction</h3>
+                    <div class="content has-text-justified">
+                    </div>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate7-d.mp4"
+                                type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate9-d.mp4"
+                                type="video/mp4">
+                      </video>
+                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                        <source src="./assets/web/duckgreenplate/duckgreenplate10-d.mp4"
+                                type="video/mp4">
+                      </video>
+                    </div>
+
+
+                      <div class="column">
+                        <h3 style="text-align:left" class="title is-4">Move pot</h3>
+                        <div class="content has-text-justified">
+                        </div>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot4.mp4"
+                                    type="video/mp4">
+                          </video>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot6.mp4"
+                                    type="video/mp4">
+                          </video>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot7.mp4"
+                                    type="video/mp4">
+                          </video>
+                        </div>
+
+
+                      <div class="column">
+                        <h3 style="text-align:left" class="title is-4">Move pot with distraction</h3>
+                        <div class="content has-text-justified">
+                        </div>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot1-d.mp4"
+                                    type="video/mp4">
+                          </video>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot5-d.mp4"
+                                    type="video/mp4">
+                          </video>
+                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                            <source src="./assets/web/movepot/movepot4-d.mp4"
+                                    type="video/mp4">
+                          </video>
+                        </div>
+                        <div class="column">
+                            <h2 style="text-align:left" class="title is-3">Target</h2>
+                            <div class="content has-text-justified">
+                
+                          <div class="column">
+                            <h3 style="text-align:left" class="title is-4">Red cup on silver pan</h3>
+                            <div class="content has-text-justified">
+                            </div>
+                              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                <source src="./assets/web/target/redcup/target_cup1.mp4"
+                                        type="video/mp4">
+                              </video>
+                              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                <source src="./assets/web/target/redcup/target_cup2.mp4"
+                                        type="video/mp4">
+                              </video>
+                              <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                <source src="./assets/web/target/redcup/target_cup3.mp4"
+                                        type="video/mp4">
+                              </video>
+                            </div>
+                
+                            <div class="column">
+                                <h3 style="text-align:left" class="title is-4">Red cup on silver pan with distraction</h3>
+                                <div class="content has-text-justified">
+                                </div>
+                                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                    <source src="./assets/web/target/redcup/d_target_cup3.mp4"
+                                            type="video/mp4">
+                                  </video>
+                                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                    <source src="./assets/web/target/redcup/d_target_cup5.mp4"
+                                            type="video/mp4">
+                                  </video>
+                                  <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                    <source src="./assets/web/target/redcup/d_target_cup4.mp4"
+                                            type="video/mp4">
+                                  </video>
+                                </div>
+                
+                                  <div class="column">
+                                    <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
+                                    <div class="content has-text-justified">
+                                    </div>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/target_duck1.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/target_duck2.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/target_duck3.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                    </div>
+                
+                                  <div class="column">
+                                    <h3 style="text-align:left" class="title is-4">Duck on green plate with distraction</h3>
+                                    <div class="content has-text-justified">
+                                    </div>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/d_target_duck1.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/d_target_duck2.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                      <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                        <source src="./assets/web/target/duck/d_target_duck3.mp4"
+                                                type="video/mp4">
+                                      </video>
+                                    </div>
+                
+                
+                                      <div class="column">
+                                        <h3 style="text-align:left" class="title is-4">Move pot</h3>
+                                        <div class="content has-text-justified">
+                                        </div>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/target_move1.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/target_move2.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/target_move3.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                        </div>
+                
+                
+                                      <div class="column">
+                                        <h3 style="text-align:left" class="title is-4">Move pot with distraction</h3>
+                                        <div class="content has-text-justified">
+                                        </div>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/d_target_move1.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/d_target_move2.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                          <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                            <source src="./assets/web/target/move/d_target_move3.mp4"
+                                                    type="video/mp4">
+                                          </video>
+                                        </div>
+                        
+
+
+
+
+        <!-- <div class="column">
+          <h2 style="text-align:left" class="title is-3">Results on Simulation</h2>
+        <div class="content has-text-justified">
+          <p>
+            We also evaluate on the FrankaKitchen benchmark. 
+            We train LCBC policies on 5 tasks in FrankaKitchen environment using 1/3/5 demonstrations for each task. 
+            DecisionNCE achieves the highest success rate across diverse dataset quantities, 
+            demonstrating its effectiveness in extracting valuable information from out-of-domain data.
+        </p>
+
+        <div class="content has-text-centered">
+          <img src="./assets/web/simulation.png" alt="algebraic reasoning" class="center">
+          <p><b><i>Figure 2:</i></b> Simulation LCBC results. Max success rate averaged over 25 evaluation episodes and 3 seeds.</p>
+        </div>
+
+          <img src="./assets/web/simulation/1.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/2.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/3.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/4.gif" alt="Image" style="width: 19%;">
+          <img src="./assets/web/simulation/5.gif" alt="Image" style="width: 19%;">
+        </div>
+        </div>
+
+                  </div>
+                </div>
+        </div>
+        </div>
+      </div>
+</section>     -->
+
+
+
+
+<!-- <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Feasibility-Guided Diffusion Model</h2>
+          <div class="content has-text-justified">
+          <p>
+            We propose a feasibility-dependent objective, i.e., 
+            <b>maximizing reward value within the feasible region while minimizing safety risks in the infeasible region</b>.
+            In FISOR, the optimal policy for the optimization problem can be derived in a special form of weighted behavior cloning.
+            Moreover, we propose a novel energy-guided sampling method that <b>does not require training a complicated time-dependent classifier</b> to simplify the training. <b>No more Lagrangian.</b>
+            
+            </p>
+          <div class="content has-text-centered">
+            <img src="./assets/framework.jpg" alt="algebraic reasoning" class="center">
+            <p><b><i>Figure 2:</i></b> Feasibility-guided diffusion model with time-independent classifier-guided sampling method.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+
+</section>     -->
+
+
+
+<!-- @PAN TODO: bibtex -->
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <pre><code>
+        @inproceedings{anonymous2024xted,
+          title={xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing},
+          author={Authors, Anonymous},
+          booktitle={Under Review}
+        }
+  </code></pre>
+    </div>
+</section>
+  
+<footer class="footer">
+<!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+    <div class="column is-8">
+        <div class="content has-text-centered">
+        <p>
+            This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        </div>
+    </div>
+    </div>
+<!-- </div> -->
+
+</footer>
+
+
+</body>
