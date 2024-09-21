@@ -1,4 +1,5 @@
 # xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing
+[[Paper](https://arxiv.org/abs/2409.08687)][[Website](https://t6-thu.github.io/xTED/)]
 
 ### Citation
 
