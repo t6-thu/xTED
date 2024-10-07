@@ -13,9 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="utf-8">
     <meta name="description"
-        content="Cross-Domain Policy Adaptation via
+        content="Cross-Domain Adaptation via
 Diffusion-Based Trajectory Editing">
-    <meta name="keywords" content="DecisionNCE, Representation Learning, Embodied AI, AI">
+    <meta name="keywords" content="Cross-Embodiment Learning, Embodied AI, Diffusion Models">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cross-Domain Policy Adaptation via
         Diffusion-Based Trajectory Editing</title>
@@ -89,7 +89,7 @@ Diffusion-Based Trajectory Editing">
                 <span class="author-block">*Equal contribution, </span><br>
                 <span class="author-block">†Project Lead:</span>
                 <span class="author-block"><a href="mailto:nhy22@mails.tsinghua.edu.cn">nhy22@mails.tsinghua.edu.cn</a></span><br>
-                <span class="author-block">✉Corresponding author:</span>
+                <span class="author-block">✉Correspondence to:</span>
                 <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
             </div>
             
@@ -186,27 +186,7 @@ Diffusion-Based Trajectory Editing">
           
           <div class="content has-text-justified">
             <p>
-                Reusing pre-collected data from different domains is an attractive solution in
-                decision-making tasks where the accessible data is insufficient in the target domain
-                but relatively abundant in other related domains. Existing cross-domain policy
-                transfer methods mostly aim at learning domain correspondences or corrections
-                to facilitate policy learning, which requires learning domain/task-specific model
-                components, representations, or policies that are inflexible or not fully reusable to
-                accommodate arbitrary domains and tasks. These issues make us wonder: can we
-                directly bridge the domain gap at the data (trajectory) level, instead of devising
-                complicated, domain-specific policy transfer models? In this study, we propose
-                a Cross-Domain Trajectory EDiting (xTED) framework with a new transformer-
-                based diffusion model (Decision Diffusion Transformer, DDiT) that captures
-                the trajectory distribution from the target dataset as a prior. The proposed
-                diffusion transformer backbone captures the intricate dependencies among state,
-                action, and reward sequences, as well as the transition dynamics within the target
-                data trajectories. With the above pre-trained diffusion prior, source data trajectories
-                with domain gaps can be transformed into edited trajectories that closely resemble
-                the target data distribution through the diffusion-based editing process, which
-                implicitly corrects the underlying domain gaps, enhancing the state realism and
-                dynamics reliability in source trajectory data, while enabling flexible choices of
-                downstream policy learning methods. Despite its simplicity, DDiT demonstrates
-                superior performance against other baselines in extensive simulation and real-robot experiments.
+                Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains. Existing cross-domain policy transfer methods mostly aim at learning domain correspondences or corrections to facilitate policy learning, such as learning domain/task-specific discriminators, representations, or policies. This design philosophy often results in heavy model architectures or task/domain-specific modeling, lacking flexibility. This reality makes us wonder: can we directly bridge the domain gaps universally at the data level, instead of relying on complex downstream cross-domain policy transfer models? In this study, we propose the Cross-Domain Trajectory EDiting (xTED) framework that employs a specially designed diffusion model for cross-domain trajectory adaptation. Our proposed model architecture effectively captures the intricate dependencies among states, actions, and rewards, as well as the dynamics patterns within target data. By utilizing the pre-trained diffusion as a prior, source domain trajectories can be transformed to match with target domain properties while preserving original semantic information. This process implicitly corrects underlying domain gaps, enhancing state realism and dynamics reliability in the source data, and allowing flexible incorporation with various downstream policy learning methods. Despite its simplicity, xTED demonstrates superior performance in extensive simulation and real-robot experiments.
             </p>
           </div>
         </div>
