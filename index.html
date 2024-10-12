@@ -60,7 +60,7 @@ Diffusion-Based Trajectory Editing">
             <div class="is-size-5 publication-authors">
                 <span class="author-block"><a href="https://t6-thu.github.io/" target="_blank">Haoyi Niu</a>* <sup>†</sup> <sup style="color:#DC4437;">1</sup>,</span>
                 <span class="author-block">Qimao Chen* <sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Tenglong Liu <sup style="color:#DC4437;">1</sup>,</span><br>
+                <span class="author-block">Tenglong Liu <sup style="color:#4385F5;">2</sup> <sup style="color:#DC4437;">1</sup>,</span><br>
                 <span class="author-block">Jianxiong Li<sup style="color:#DC4437;">1</sup>,</span>
                 <span class="author-block">Guyue Zhou<sup style="color:#DC4437;">1</sup>,</span>
                 <span class="author-block">Yi Zhang<sup>✉</sup> <sup style="color:#DC4437;">1</sup>,</span>
@@ -69,7 +69,7 @@ Diffusion-Based Trajectory Editing">
                 <span class="author-block">XXX<sup style="color:#4385F5;">2</sup>,</span>
                 <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
                 <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span> -->
-                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#4385F5;">2</sup>,</span>
+                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#109D59;">3</sup>,</span>
                 
             </div>
             
@@ -77,7 +77,8 @@ Diffusion-Based Trajectory Editing">
             
             <div class="is-size-5 publication-authors">
                 <span class="author-block"><sup style="color:#DC4437;">1</sup>Tsinghua University</span>
-                <span class="author-block"><sup style="color:#4385F5;">2</sup>Shanghai AI Lab</span>
+                <span class="author-block"><sup style="color:#4385F5;">2</sup>National University of Defense Technology</span>
+                <span class="author-block"><sup style="color:#109D59;">3</sup>Shanghai AI Lab</span><br>
 <!--                 <span class="author-block"><sup style="color:#109D59;">3</sup>XXX</span><br>
                 <span class="author-block"><sup style="color:#F5B400;">4</sup>XXX</span>
                 <span class="author-block"><sup style="color:#f542dd;">5</sup>XXX</span> -->
@@ -186,7 +187,7 @@ Diffusion-Based Trajectory Editing">
           
           <div class="content has-text-justified">
             <p>
-                Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains. Existing cross-domain policy transfer methods mostly aim at learning domain correspondences or corrections to facilitate policy learning, such as learning domain/task-specific discriminators, representations, or policies. This design philosophy often results in heavy model architectures or task/domain-specific modeling, lacking flexibility. This reality makes us wonder: can we directly bridge the domain gaps universally at the data level, instead of relying on complex downstream cross-domain policy transfer models? In this study, we propose the Cross-Domain Trajectory EDiting (xTED) framework that employs a specially designed diffusion model for cross-domain trajectory adaptation. Our proposed model architecture effectively captures the intricate dependencies among states, actions, and rewards, as well as the dynamics patterns within target data. By utilizing the pre-trained diffusion as a prior, source domain trajectories can be transformed to match with target domain properties while preserving original semantic information. This process implicitly corrects underlying domain gaps, enhancing state realism and dynamics reliability in the source data, and allowing flexible incorporation with various downstream policy learning methods. Despite its simplicity, xTED demonstrates superior performance in extensive simulation and real-robot experiments.
+               Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains. Existing cross-domain policy transfer methods mostly aim at learning domain correspondences or corrections to facilitate policy learning, such as learning domain/task-specific discriminators, representations, or policies. This design philosophy often results in heavy model architectures or task/domain-specific modeling, lacking flexibility. This reality makes us wonder: can we directly bridge the domain gaps universally at the data level, instead of relying on complex downstream cross-domain policy transfer models? In this study, we propose the <b>Cross</b>-Domain <b>T</b>rajectory <b>ED</b>iting (<b>xTED</b>) framework that employs a specially designed diffusion model for cross-domain trajectory adaptation. Our proposed model architecture effectively captures the intricate dependencies among states, actions, and rewards, as well as the dynamics patterns within target data. By utilizing the pre-trained diffusion as a prior, source domain trajectories can be transformed to match with target domain properties while preserving original semantic information.  This process implicitly corrects underlying domain gaps, enhancing state realism and dynamics reliability in the source data, and allowing flexible incorporation with various downstream policy learning methods. Despite its simplicity, xTED demonstrates superior performance in extensive simulation and real-robot experiments.
             </p>
           </div>
         </div>
