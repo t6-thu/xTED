@@ -204,14 +204,11 @@ Diffusion-Based Trajectory Editing">
             <h1 class="title is-2">Downstream Robot Manipulation Tasks</h1>
           <div class="content has-text-justified">
           <p>
-            We conduct real-world experiments in robotic environments where target data is collected by (a) WidowX 
-            robot and source data is collected by (b) Airbot, for 100 trajectories respectively. We build three 
-            manipulation tasks: (1) Picking up a red cup on a silver pan (Cup); (2) Picking up a duck on a green plate (Duck); 
-            (3) Moving a pot from right to left (Pot). 
+            We conduct real-world experiments in robotic environments where target data is collected by (a) WidowX robot and source data is collected by (b) Airbot, for 100 trajectories respectively. We build three manipulation tasks: (1) Picking up a red cup on a silver pan (Cup); (2) Picking up a duck on a green plate (Duck); (3) Moving a pot from right to left (Pot).
           </p>
 
 
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
+            <!-- <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
                 <div style="text-align: center;">
                     <img src="./assets/web/robot/air.png" alt="WidowX" style="max-width: 100%;">
                     <p><i>(a) WidowX</i></p>
@@ -252,11 +249,20 @@ Diffusion-Based Trajectory Editing">
                     <img src="./assets/web/robot/pick_duck_1.jpg" alt="Gripper View" style="max-width: 100%;">
                     <p><i>(j) Gripper View</i></p>
                 </div>
+            </div> -->
+            <div style="text-align: center;">
+              <div style="margin-bottom: 20px;">
+                <img src="./assets/web/xted-robot.png" alt="real world experiment" style="width: 100%; height: auto;">
+              </div>
             </div>
             <p style="text-align:center;">
                 <b>Figure 1:</b> The comparisons between the target domain and the source domain. 
-                Figure (b-e) and (g-j) show the process of data collection in target and source domain respectively. For example, Figure (b,c,g,h) and (d,e,i,j) show the primary views and gripper views from <b>Cup</b> and <b>Duck</b> tasks respectively.
+                Target and source domains with complicated discrepancies on embodiments and viewpoints (top) and experiment results (bottom). The top right presents the snapshots from base and wrist camera views of data collection processes in target/source domain from <b>Cup</b>/<b>Duck</b>/<b>Pot</b> tasks respectively. The average success rate for real-robot tasks with/without distractors is obtained over 3 seeds.
             </p>
+            <!-- <p style="text-align:center;">
+                <b>Figure 1:</b> The comparisons between the target domain and the source domain. 
+                Figure (b-e) and (g-j) show the process of data collection in target and source domain respectively. For example, Figure (b,c,g,h) and (d,e,i,j) show the primary views and gripper views from <b>Cup</b> and <b>Duck</b> tasks respectively.
+            </p> -->
         
         <div class="column">
             <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
@@ -517,7 +523,120 @@ Diffusion-Based Trajectory Editing">
                                                     type="video/mp4">
                                           </video>
                                         </div>
-                        
+
+                                        <div class="column">
+                                          <h2 style="text-align:left" class="title is-3">Target + Source</h2>
+                                          <div class="content has-text-justified">
+                              
+                                        <div class="column">
+                                          <h3 style="text-align:left" class="title is-4">Red cup on silver pan</h3>
+                                          <div class="content has-text-justified">
+                                          </div>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup1.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup2.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup3.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                          </div>
+                              
+                                          <div class="column">
+                                              <h3 style="text-align:left" class="title is-4">Red cup on silver pan with distraction</h3>
+                                              <div class="content has-text-justified">
+                                              </div>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup1-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup2-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup3-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                              </div>
+                              
+                                                <div class="column">
+                                                  <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
+                                                  <div class="content has-text-justified">
+                                                  </div>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck1.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck2.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck3.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                  </div>
+                              
+                                                <div class="column">
+                                                  <h3 style="text-align:left" class="title is-4">Duck on green plate with distraction</h3>
+                                                  <div class="content has-text-justified">
+                                                  </div>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck1-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck2-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck3-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                  </div>
+                              
+                              
+                                                    <div class="column">
+                                                      <h3 style="text-align:left" class="title is-4">Move pot</h3>
+                                                      <div class="content has-text-justified">
+                                                      </div>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move1.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move2.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move3.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                      </div>
+                              
+                              
+                                                    <div class="column">
+                                                      <h3 style="text-align:left" class="title is-4">Move pot with distraction</h3>
+                                                      <div class="content has-text-justified">
+                                                      </div>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move1-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move2-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move3-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                      </div>
 
 
 
@@ -586,9 +705,9 @@ Diffusion-Based Trajectory Editing">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
       <pre><code>
         @inproceedings{niu2024xted,
-          title={xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing},
+          title={xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing},
           author={Niu, Haoyi and Chen, Qimao and Liu, Tenglong and Li, Jianxiong and Zhou, Guyue and Zhang, Yi and Hu, Jianming and Zhan, Xianyuan},
-          booktitle={Under Review}
+          booktitle={NeurIPS 2024 Workshop on Open-World Agents}
         }
   </code></pre>
     </div>
