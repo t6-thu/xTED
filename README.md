@@ -1,4 +1,4 @@
-# xTED
+# xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing
 
 ![](imgs/real-robot.png)
 
