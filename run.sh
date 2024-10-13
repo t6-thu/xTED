@@ -1,1 +1,0 @@
-CUDA_VISIBLE_DEVICES=3 taskset -c 1-64 python train.py --run_name halfdata --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdexpert.py --split_rate 0.5
