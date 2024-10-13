@@ -13,13 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="utf-8">
     <meta name="description"
-        content="Cross-Domain Policy Adaptation via
+        content="Cross-Domain Adaptation via
 Diffusion-Based Trajectory Editing">
-    <meta name="keywords" content="DecisionNCE, Representation Learning, Embodied AI, AI">
+    <meta name="keywords" content="Cross-Embodiment Learning, Embodied AI, Diffusion Models">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cross-Domain Policy Adaptation via
+    <title>Cross-Domain Adaptation via
         Diffusion-Based Trajectory Editing</title>
-    <title>Cross-Domain Policy Adaptation via
+    <title>Cross-Domain Adaptation via
         Diffusion-Based Trajectory Editing</title>
     <!-- <link rel="icon" href="./assets/icon.png"> -->
 
@@ -51,33 +51,34 @@ Diffusion-Based Trajectory Editing">
                 <span class="mmmu" style="vertical-align: middle">xTED</span>
                 </h1>
             <h2 class="subtitle is-3 publication-subtitle">
-                Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing
+                Cross-Domain Adaptation via Diffusion-Based Trajectory Editing
                 
                 <!-- <br>
                 and Reasoning Benchmark for Expert AGI -->
             </h2>
 
             <div class="is-size-5 publication-authors">
-                <span class="author-block"><a href="https://t6-thu.github.io/" target="_blank">Haoyi Niu</a>* <sup>†</sup> <sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Qimao Chen* <sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Tenglong Liu <sup style="color:#DC4437;">1</sup>,</span><br>
-                <span class="author-block">Jianxiong Li<sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Guyue Zhou<sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Yi Zhang<sup>✉</sup> <sup style="color:#DC4437;">1</sup>,</span>
-                <span class="author-block">Jianming Hu<sup>✉</sup> <sup style="color:#DC4437;">1</sup>,</span>
+                <span class="author-block"><a href="https://t6-thu.github.io/" target="_blank">Haoyi Niu</a>* <sup>†</sup> <sup style="color:#4385F5;">1</sup>,</span>
+                <span class="author-block">Qimao Chen* <sup style="color:#4385F5;">1</sup>,</span>
+                <span class="author-block">Tenglong Liu <sup style="color:#F5B400;">2</sup> <sup style="color:#4385F5;">1</sup>,</span><br>
+                <span class="author-block">Jianxiong Li<sup style="color:#4385F5;">1</sup>,</span>
+                <span class="author-block">Guyue Zhou<sup style="color:#4385F5;">1</sup>,</span>
+                <span class="author-block">Yi Zhang<sup>✉</sup> <sup style="color:#4385F5;">1</sup>,</span>
+                <span class="author-block">Jianming Hu<sup>✉</sup> <sup style="color:#4385F5;">1</sup>,</span>
 <!--                 <span class="author-block">XXX<sup style="color:#F5B400;">4</sup> <sup style="color:#4385F5;">2</sup>,</span><br>
                 <span class="author-block">XXX<sup style="color:#4385F5;">2</sup>,</span>
                 <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span>
                 <span class="author-block">XXX<sup style="color:#DC4437;">1</sup>,</span> -->
-                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#DC4437;">1</sup> <sup style="color:#4385F5;">2</sup>,</span>
+                <span class="author-block">Xianyuan Zhan<sup>✉</sup> <sup style="color:#4385F5;">1</sup> <sup style="color:#109D59;">3</sup>,</span>
                 
             </div>
             
             <br>
             
             <div class="is-size-5 publication-authors">
-                <span class="author-block"><sup style="color:#DC4437;">1</sup>Tsinghua University</span>
-                <span class="author-block"><sup style="color:#4385F5;">2</sup>Shanghai AI Lab</span>
+                <span class="author-block"><sup style="color:#4385F5;">1</sup>Tsinghua University</span>
+                <span class="author-block"><sup style="color:#F5B400;">2</sup>National University of Defense Technology</span>
+                <span class="author-block"><sup style="color:#109D59;">3</sup>Shanghai AI Lab</span><br>
 <!--                 <span class="author-block"><sup style="color:#109D59;">3</sup>XXX</span><br>
                 <span class="author-block"><sup style="color:#F5B400;">4</sup>XXX</span>
                 <span class="author-block"><sup style="color:#f542dd;">5</sup>XXX</span> -->
@@ -89,7 +90,7 @@ Diffusion-Based Trajectory Editing">
                 <span class="author-block">*Equal contribution, </span><br>
                 <span class="author-block">†Project Lead:</span>
                 <span class="author-block"><a href="mailto:nhy22@mails.tsinghua.edu.cn">nhy22@mails.tsinghua.edu.cn</a></span><br>
-                <span class="author-block">✉Corresponding author:</span>
+                <span class="author-block">✉Correspondence to:</span>
                 <span class="author-block"><a href="mailto:zhanxianyuan@air.tsinghua.edu.cn">zhanxianyuan@air.tsinghua.edu.cn</a></span>
             </div>
             
@@ -186,27 +187,7 @@ Diffusion-Based Trajectory Editing">
           
           <div class="content has-text-justified">
             <p>
-                Reusing pre-collected data from different domains is an attractive solution in
-                decision-making tasks where the accessible data is insufficient in the target domain
-                but relatively abundant in other related domains. Existing cross-domain policy
-                transfer methods mostly aim at learning domain correspondences or corrections
-                to facilitate policy learning, which requires learning domain/task-specific model
-                components, representations, or policies that are inflexible or not fully reusable to
-                accommodate arbitrary domains and tasks. These issues make us wonder: can we
-                directly bridge the domain gap at the data (trajectory) level, instead of devising
-                complicated, domain-specific policy transfer models? In this study, we propose
-                a Cross-Domain Trajectory EDiting (xTED) framework with a new transformer-
-                based diffusion model (Decision Diffusion Transformer, DDiT) that captures
-                the trajectory distribution from the target dataset as a prior. The proposed
-                diffusion transformer backbone captures the intricate dependencies among state,
-                action, and reward sequences, as well as the transition dynamics within the target
-                data trajectories. With the above pre-trained diffusion prior, source data trajectories
-                with domain gaps can be transformed into edited trajectories that closely resemble
-                the target data distribution through the diffusion-based editing process, which
-                implicitly corrects the underlying domain gaps, enhancing the state realism and
-                dynamics reliability in source trajectory data, while enabling flexible choices of
-                downstream policy learning methods. Despite its simplicity, DDiT demonstrates
-                superior performance against other baselines in extensive simulation and real-robot experiments.
+               Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains. Existing cross-domain policy transfer methods mostly aim at learning domain correspondences or corrections to facilitate policy learning, such as learning domain/task-specific discriminators, representations, or policies. This design philosophy often results in heavy model architectures or task/domain-specific modeling, lacking flexibility. This reality makes us wonder: can we directly bridge the domain gaps universally at the data level, instead of relying on complex downstream cross-domain policy transfer models? In this study, we propose the <b>Cross</b>-Domain <b>T</b>rajectory <b>ED</b>iting (<b>xTED</b>) framework that employs a specially designed diffusion model for cross-domain trajectory adaptation. Our proposed model architecture effectively captures the intricate dependencies among states, actions, and rewards, as well as the dynamics patterns within target data. By utilizing the pre-trained diffusion as a prior, source domain trajectories can be transformed to match with target domain properties while preserving original semantic information.  This process implicitly corrects underlying domain gaps, enhancing state realism and dynamics reliability in the source data, and allowing flexible incorporation with various downstream policy learning methods. Despite its simplicity, xTED demonstrates superior performance in extensive simulation and real-robot experiments.
             </p>
           </div>
         </div>
@@ -223,14 +204,11 @@ Diffusion-Based Trajectory Editing">
             <h1 class="title is-2">Downstream Robot Manipulation Tasks</h1>
           <div class="content has-text-justified">
           <p>
-            We conduct real-world experiments in robotic environments where target data is collected by (a) WidowX 
-            robot and source data is collected by (b) Airbot, for 100 trajectories respectively. We build three 
-            manipulation tasks: (1) Picking up a red cup on a silver pan (Cup); (2) Picking up a duck on a green plate (Duck); 
-            (3) Moving a pot from right to left (Pot). 
+            We conduct real-world experiments in robotic environments where target data is collected by (a) WidowX robot and source data is collected by (b) Airbot, for 100 trajectories respectively. We build three manipulation tasks: (1) Picking up a red cup on a silver pan (Cup); (2) Picking up a duck on a green plate (Duck); (3) Moving a pot from right to left (Pot).
           </p>
 
 
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
+            <!-- <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
                 <div style="text-align: center;">
                     <img src="./assets/web/robot/air.png" alt="WidowX" style="max-width: 100%;">
                     <p><i>(a) WidowX</i></p>
@@ -271,11 +249,20 @@ Diffusion-Based Trajectory Editing">
                     <img src="./assets/web/robot/pick_duck_1.jpg" alt="Gripper View" style="max-width: 100%;">
                     <p><i>(j) Gripper View</i></p>
                 </div>
+            </div> -->
+            <div style="text-align: center;">
+              <div style="margin-bottom: 20px;">
+                <img src="./assets/web/xted-robot.png" alt="real world experiment" style="width: 100%; height: auto;">
+              </div>
             </div>
             <p style="text-align:center;">
                 <b>Figure 1:</b> The comparisons between the target domain and the source domain. 
-                Figure (b-e) and (g-j) show the process of data collection in target and source domain respectively. For example, Figure (b,c,g,h) and (d,e,i,j) show the primary views and gripper views from <b>Cup</b> and <b>Duck</b> tasks respectively.
+                Target and source domains with complicated discrepancies on embodiments and viewpoints (top) and experiment results (bottom). The top right presents the snapshots from base and wrist camera views of data collection processes in target/source domain from <b>Cup</b>/<b>Duck</b>/<b>Pot</b> tasks respectively. The average success rate for real-robot tasks with/without distractors is obtained over 3 seeds.
             </p>
+            <!-- <p style="text-align:center;">
+                <b>Figure 1:</b> The comparisons between the target domain and the source domain. 
+                Figure (b-e) and (g-j) show the process of data collection in target and source domain respectively. For example, Figure (b,c,g,h) and (d,e,i,j) show the primary views and gripper views from <b>Cup</b> and <b>Duck</b> tasks respectively.
+            </p> -->
         
         <div class="column">
             <h2 style="text-align:left" class="title is-3">Results on Real Robots</h2>
@@ -536,7 +523,120 @@ Diffusion-Based Trajectory Editing">
                                                     type="video/mp4">
                                           </video>
                                         </div>
-                        
+
+                                        <div class="column">
+                                          <h2 style="text-align:left" class="title is-3">Target + Source</h2>
+                                          <div class="content has-text-justified">
+                              
+                                        <div class="column">
+                                          <h3 style="text-align:left" class="title is-4">Red cup on silver pan</h3>
+                                          <div class="content has-text-justified">
+                                          </div>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup1.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup2.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                            <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                              <source src="./assets/web/target_unedit/cup3.mp4"
+                                                      type="video/mp4">
+                                            </video>
+                                          </div>
+                              
+                                          <div class="column">
+                                              <h3 style="text-align:left" class="title is-4">Red cup on silver pan with distraction</h3>
+                                              <div class="content has-text-justified">
+                                              </div>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup1-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup2-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                                <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                  <source src="./assets/web/target_unedit/cup3-d.mp4"
+                                                          type="video/mp4">
+                                                </video>
+                                              </div>
+                              
+                                                <div class="column">
+                                                  <h3 style="text-align:left" class="title is-4">Duck on green plate</h3>
+                                                  <div class="content has-text-justified">
+                                                  </div>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck1.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck2.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck3.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                  </div>
+                              
+                                                <div class="column">
+                                                  <h3 style="text-align:left" class="title is-4">Duck on green plate with distraction</h3>
+                                                  <div class="content has-text-justified">
+                                                  </div>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck1-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck2-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                      <source src="./assets/web/target_unedit/duck3-d.mp4"
+                                                              type="video/mp4">
+                                                    </video>
+                                                  </div>
+                              
+                              
+                                                    <div class="column">
+                                                      <h3 style="text-align:left" class="title is-4">Move pot</h3>
+                                                      <div class="content has-text-justified">
+                                                      </div>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move1.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move2.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move3.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                      </div>
+                              
+                              
+                                                    <div class="column">
+                                                      <h3 style="text-align:left" class="title is-4">Move pot with distraction</h3>
+                                                      <div class="content has-text-justified">
+                                                      </div>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move1-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move2-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                        <video id="dollyzoom" autoplay controls muted loop playsinline width="32.5%" height="100%">
+                                                          <source src="./assets/web/target_unedit/move3-d.mp4"
+                                                                  type="video/mp4">
+                                                        </video>
+                                                      </div>
 
 
 
@@ -605,9 +705,9 @@ Diffusion-Based Trajectory Editing">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
       <pre><code>
         @inproceedings{niu2024xted,
-          title={xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing},
+          title={xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing},
           author={Niu, Haoyi and Chen, Qimao and Liu, Tenglong and Li, Jianxiong and Zhou, Guyue and Zhang, Yi and Hu, Jianming and Zhan, Xianyuan},
-          booktitle={Under Review}
+          booktitle={NeurIPS 2024 Workshop on Open-World Agents}
         }
   </code></pre>
     </div>
