@@ -23,7 +23,7 @@ python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheet
 ```
 The resulting model file would be found in `logs/`.
 
-## Editing
+## Trajectory Editing
 
 ```bash
 python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --run_name edit  --ckpt_path path_to_ckpt --dynamic gravity --variety_degree 2.0
@@ -36,9 +36,9 @@ The code is built upon a jax implementation of Decision Diffuser, [decision-diff
 
 ```
 @article{niu2024xted,
-  title={xTED: Cross-Domain Policy Adaptation via Diffusion-Based Trajectory Editing},
+  title={xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing},
   author={Niu, Haoyi and Chen, Qimao and Liu, Tenglong and Li, Jianxiong and Zhou, Guyue and Zhang, Yi and Hu, Jianming and Zhan, Xianyuan},
-  journal={arXiv preprint arXiv:2409.08687},
+  journal={NeurIPS 2024 Workshop on Open-World Agents},
   year={2024}
 }
 ```
