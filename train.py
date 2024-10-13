@@ -40,7 +40,7 @@ def main():
     parser.add_argument('--use_goal_condition', action='store_true')
     parser.add_argument('--returns_condition', action='store_true')
     # parser.add_argument('--edit_sar', action='store_true')
-    parser.add_argument('--net_arch', type=str, default='sar_dim_cross_aln_v7', choices=['sar_tmp_v8', 'inv', 'sar_v0', 'self_cross_v1', 'cross_self_v2', 'cross_v3', 'cross_dim_v4', 'cross_woAdaLN_v5', 'cross_LNq_v6', 'cross_SArew_v7', 'cross_blocks_v8', 'cross_alladaln_v9', 'inv_v0', 'sar_v1', 'sar_sd_v2', 'sar_sa_v3', 'sar_dim_v4', 'sar_dim_cross_v5', 'sar_dim_scross_v6', 'sar_dim_cross_aln_v7', 'sar_dim_cross_aln_nose_v10', 'sar_dim_v7', 'sar_dim_cross_v11', 'sar_dim_cross_v12'])
+    parser.add_argument('--net_arch', type=str, default='cross_alladaln_v9', choices=['sar_tmp_v8', 'inv', 'sar_v0', 'self_cross_v1', 'cross_self_v2', 'cross_v3', 'cross_dim_v4', 'cross_woAdaLN_v5', 'cross_LNq_v6', 'cross_SArew_v7', 'cross_blocks_v8', 'cross_alladaln_v9', 'inv_v0', 'sar_v1', 'sar_sd_v2', 'sar_sa_v3', 'sar_dim_v4', 'sar_dim_cross_v5', 'sar_dim_scross_v6', 'sar_dim_cross_aln_v7', 'sar_dim_cross_aln_nose_v10', 'sar_dim_v7', 'sar_dim_cross_v11', 'sar_dim_cross_v12'])
     # parser.add_argument('--use_inv_dynamic', action='store_true')
     # parser.add_argument('--use_reward_dynamic', action='store_true')
     parser.add_argument('--seperate_encoding', action='store_true')
