@@ -2,6 +2,8 @@
 
 ![](imgs/real-robot.png)
 
+[[Paper](https://arxiv.org/abs/2409.08687)][[Website](https://t6-thu.github.io/xTED/)]
+
 Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains.
             Existing cross-domain policy transfer methods mostly aim at learning domain correspondences or corrections to facilitate policy learning, such as learning domain/task-specific discriminators, representations, or policies. This design philosophy often results in heavy model architectures or task/domain-specific modeling, lacking flexibility.
             This reality makes us wonder: can we directly bridge the domain gaps universally at the data level, instead of relying on complex downstream cross-domain policy transfer models?
