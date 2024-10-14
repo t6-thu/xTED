@@ -21,14 +21,14 @@ Train diffusion priors on target data:
 ```bash
 python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --run_name train 
 ```
-The saved model file would be found in `logs/`.
+The saved model file would be found in `logs/run_name/`.
 
 ## Trajectory Editing
 Edit source trajectories with the saved checkpoint:
 ```bash
-python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --run_name edit  --ckpt_path path_to_ckpt --dynamic gravity --variety_degree 2.0
+python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --opt gen --gen_trajs --run_name edit  --ckpt_path path_to_ckpt --dynamic gravity --variety_degree 2.0
 ```
-
+The edited file would be found in `logs/run_name/`.
 ## Credit
 The code is built upon a jax implementation of Decision Diffuser, [decision-diffuser-jax](https://github.com/zbzhu99/decision-diffuser-jax).
 
