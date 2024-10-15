@@ -16,15 +16,15 @@ Reusing pre-collected data from different domains is an appealing solution for d
 pip install -r requirements
 ```
 
-## Train Diffusion Model
-Train diffusion priors on target data:
+## Train diffusion model
+Train diffusion priors on target data to capture the intricate dynamics patterns and dependencies in target trajectories:
 ```bash
 python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --run_name train 
 ```
 The saved model file would be found in `logs/run_name/`.
 
-## Trajectory Editing
-Edit source trajectories with the saved checkpoint:
+## Edit trajectories
+Edit source trajectories with the saved checkpoint for minimizing the underlying domain gaps:
 ```bash
 python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --opt gen --gen_trajs --run_name edit  --ckpt_path path_to_ckpt --dynamic gravity --variety_degree 2.0
 ```
