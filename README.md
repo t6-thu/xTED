@@ -28,7 +28,8 @@ Edit source trajectories with the saved checkpoint:
 ```bash
 python train.py --config configs/diffuser_inv_halfcheetah/diffuser_inv_halfcheetah_mdreplay.py --opt gen --gen_trajs --run_name edit  --ckpt_path path_to_ckpt --dynamic gravity --variety_degree 2.0
 ```
-The edited file would be found in `logs/run_name/`.
+The edited data file would be found in `logs/run_name/`. You can flexibly incorporate those edited source data with target data into policy learning with any algorithm at will.
+
 ## Credit
 The code is built upon a jax implementation of Decision Diffuser, [decision-diffuser-jax](https://github.com/zbzhu99/decision-diffuser-jax).
 
