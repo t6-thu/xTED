@@ -1,6 +1,9 @@
 # xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing [[Paper](https://arxiv.org/abs/2409.08687)][[Website](https://t6-thu.github.io/xTED/)]
 
-AAMAS 2026 Extended Abstract
+<div align="center">
+  <p>AAMAS 2026 Extended Abstract/p>
+</div>
+
 
 ![](imgs/real-robot.png)
 
