@@ -1,7 +1,7 @@
 # xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing [[Paper](https://arxiv.org/abs/2409.08687)][[Website](https://t6-thu.github.io/xTED/)]
 
 <div align="center">
-  <p>AAMAS 2026 Extended Abstract/p>
+  <p>AAMAS 2026 Extended Abstract</p>
 </div>
 
 
@@ -41,10 +41,10 @@ The code is built upon a jax implementation of Decision Diffuser, [decision-diff
 ## Citation 
 
 ```
-@article{niu2024xted,
+@article{niu2026xted,
   title={xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing},
   author={Niu, Haoyi and Chen, Qimao and Liu, Tenglong and Li, Jianxiong and Zhou, Guyue and Zhang, Yi and Hu, Jianming and Zhan, Xianyuan},
-  journal={NeurIPS 2024 Workshop on Open-World Agents},
-  year={2024}
+  journal={International Conference on Autonomous Agents and Multiagent Systems (Extended Abstract)},
+  year={2026}
 }
 ```
