@@ -1,5 +1,7 @@
 # xTED: Cross-Domain Adaptation via Diffusion-Based Trajectory Editing [[Paper](https://arxiv.org/abs/2409.08687)][[Website](https://t6-thu.github.io/xTED/)]
 
+AAMAS 2026 Extended Abstract
+
 ![](imgs/real-robot.png)
 
 Reusing pre-collected data from different domains is an appealing solution for decision-making tasks that have insufficient data in the target domain but are relatively abundant in other related domains.
